@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+for i, c in enumerate(range(122, 96, -1)):
+    print("{:c}".format(c - (32 * (i % 2))), end="")
+
