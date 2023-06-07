@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-num = 0
 if number < 0:
-    num = number * -1
+    number = number * -1
 
-l_num = num % 10
+l_num = number % 10
 message = "Last digit of {} is {} ".format(number, l_num)
 
 if l_num > 5:
