@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 import random
-number = random.randint(-10000, 10000)
+"""number = random.randint(-10000, 10000)"""
+number = -982
 if number < 0:
-    number = number * -1
+    num = number * -1
 
-l_num = number % 10
-message = "Last digit of {} is {}".format(number, l_num)
+l_num = num % 10
+message = "Last digit of {} is {} ".format(number, l_num)
 
 if l_num > 5:
     message += " and is greater than 5"
