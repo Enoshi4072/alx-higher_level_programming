@@ -12,10 +12,9 @@ int check_cycle(listint_t *list)
 	listint_t *first = list; /* Beginning of the list */
 	listint_t *after_first = list->next; /* Step ahead of the first */
 
-	if (list == NULL)
-		return (0); /*Empty list*/
-	if (list->next == NULL)
-		return (0); /* List with one element */
+	if (list == NULL || list->next == NULL)
+		/* No cycle, return 0 */
+		return (0);
 	/* Check if the pointers meet each other or they reach the end of the list */
 	while (first != after_first)
 	{
