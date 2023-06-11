@@ -24,12 +24,14 @@ listint_t *insert_node(listint_t **head, int number)
 	{
 		n_node->next = *head;
 		*head = n_node;
+		return(n_node);
 	}
 	/* start with the beginning if the first element is smaller than number */
 	if (number < (*head)->n)
 	{
 		n_node->next = *head;
 		*head = n_node;
+		return(n_node);
 	}
 	/* Find the position to insert the node */
 	c_node = *head;
