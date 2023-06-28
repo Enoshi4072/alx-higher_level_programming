@@ -29,7 +29,7 @@ class Square:
     @size.setter
     def size(self, value):
         """
-        Setter: 
+        Setter:
             Sets the sqaures size
 
         """
