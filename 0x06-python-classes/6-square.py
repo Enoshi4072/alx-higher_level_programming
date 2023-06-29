@@ -44,7 +44,7 @@ class Square:
 
         """
         if not type(value) is tuple or len(value) != 2:
-            raise TypeError("position must be a tuple of 2 or more positive intergers")
+            raise TypeError("position must be a tuple of 2 positive intergers")
         if not all(type(num) is int and num >= 0 for num in value):
             raise TypeError("position must be a tuple of 2 positive intergers")
         self.__position = value
@@ -66,8 +66,4 @@ class Square:
         for i in range(self.position[1]):
             print("")
         for j in range(self.size):
-            for k in range(self.position[0]):
-                print(" ", end="")
-            for m in range(self.size):
-                print("#", end="")
-            print("")
+            print(" " * self.position[0] + "#" * self.size)
