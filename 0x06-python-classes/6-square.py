@@ -43,9 +43,8 @@ class Square:
         Setter: Sets the position of the square
 
         """
-        if not type(value) is tuple or len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive intergers")
-        if not all(type(num) is int and num >= 0 for num in value):
+        if (not type(value) is tuple or len(value) != 2 or
+                not all(type(num) is int and num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive intergers")
         self.__position = value
 
