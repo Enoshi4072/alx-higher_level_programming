@@ -1,0 +1,14 @@
+Using ''5-text_indentation.py''
+===============================
+prints a text with 2 new lines after each of these characters: ., ? and :
+prototype ''def text_indentation(text):''
+==========================================================================
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Django:")
+Django:
+
+>>> text_indentation("   Django?")
+
+>>> text_indentation("Java   ")
+
+>>> text_indentation("Java?   React   ")
