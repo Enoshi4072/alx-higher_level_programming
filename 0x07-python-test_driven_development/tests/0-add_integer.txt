@@ -1,0 +1,70 @@
+using 0-add_integer.py
+======================
+
+prototype of the function ''add_integer(a, b=98)''.
+
+Returns the sum of the arguments provided as numbers.
+====================================================
+
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(4, 5)
+9
+
+A negative and a positive int
+>>> add_integer(-4, 5)
+1
+
+A positive and a negative int
+>>> add_integer(4, -5)
+-1
+
+Negative integers
+>>> add_integer(-4, -5)
+-9
+
+Handling positive floats
+>>> add_integer(4.5, 5.7)
+9
+
+Handling negative floats
+>>> add_integer(-4.0, -5.0)
+-9
+
+Default val testing
+>>> add_integer(5)
+103
+
+Second arg a negative float
+>>> add_integer(2.5, -4.9)
+-2
+
+first arg a negative float
+>>> add_integer(-2.5, 4.9)
+2
+
+When Non ints or floats are provided as arguments
+=================================================
+
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer("javascript", "django")
+Traceback (most recent call last):
+TypeError: a must be an integer
+ 
+>>> add_integer("java", 3)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(2, "C")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(4, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(None, 5)
+Traceback (most recent call last):
+TypeError: a must be an integer
