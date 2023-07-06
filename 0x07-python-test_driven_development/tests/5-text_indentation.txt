@@ -9,6 +9,16 @@ Django:
 
 >>> text_indentation("   Django?")
 
->>> text_indentation("Java   ")
+>>> text_indentation("Java.   ")
 
->>> text_indentation("Java?   React   ")
+>>> text_indentation("Java?   React.   ")
+
+>>> text_indentation("     ")
+
+>>> text_indentation("    C is fun.    Python too.   ")
+
+>>> text_indentation(20)
+
+>>> text_indentation("")
+
+>>> text_indentation({"Java": 8, "pink": 1})
