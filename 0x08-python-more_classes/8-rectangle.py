@@ -112,7 +112,7 @@ class Rectangle:
             return ("")
 
         return "\n".join([str(self.print_symbol) * self.__width] * self.__height)
-
+    
     def __repr__(self):
         """
         Return:
@@ -124,3 +124,28 @@ class Rectangle:
         """ Prints a message if a rectangle has been deleted """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """
+        Return the rectangle with the equal or big area
+
+        Args:
+            rect_1: The first rectangle.
+            rect_2: The second rectangle
+
+        Raises:
+            TypeError: If rect_1 or rect_2 is not an instance of the Rectangle
+
+        Return:
+            The rectangle with the equal or bigger area
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        else:
+            return rect_2
