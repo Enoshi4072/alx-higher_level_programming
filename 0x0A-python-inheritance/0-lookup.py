@@ -2,6 +2,7 @@
 
 """ Defining a function that will look of attributes of an object """
 
+
 def lookup(obj):
     """
     Returns the list of available attributes of an object
