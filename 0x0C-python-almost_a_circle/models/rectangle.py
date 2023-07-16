@@ -14,7 +14,8 @@ class Rectangle(Base):
 
         Args:
             Width: The rectangles width
-            height: The rectangles height
+            height: 
+            The rectangles height
             x: The rectangles x-coordinate
             y: The rectangles y-coordinate
             id: The id value to be assignd to the rectangle
@@ -98,6 +99,8 @@ class Rectangle(Base):
             ValueError: If the value is <= 0
         """
         if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
 
@@ -118,5 +121,7 @@ class Rectangle(Base):
             ValueError: If the value is <= 0
         """
         if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
