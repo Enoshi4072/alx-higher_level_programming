@@ -7,6 +7,7 @@ import json
 class Base:
     __nb_objects = 0
 
+    """ Function for intitializing """
     def __init__(self, id=None):
         """
         Initializing the base class
@@ -22,7 +23,14 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ Return a JSON string rep of a list_dict """
+        """
+        Return a JSON string rep of a list_dict
+
+        Args:
+            list_dictionary: A list of dictionaries to be converted to JSON
+        Return:
+            str: A JSON string rep of the list of dicts
+        """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
@@ -30,7 +38,12 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ Writes the JSON string rep of list_objs to a file """
+        """
+        Writes the JSON string rep of list_objs to a file
+
+        Args:
+            list_objs: A list of insts to convert to JSOn and save
+        """
         filename = cls.__name__ + ".json"
         if list_objs is None:
             list_j = "[]"
@@ -41,7 +54,15 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ Returns a string rep of a JSON string """
+        """
+        Conversio of a JSON string to a list of dicts
+
+        Args:
+            json_string: A JSON string to convert to a list of dicts
+
+        Return:
+            list: A list of dicts converted from JSON string
+        """
         if json_string is None or len(json_string) == 0:
             return "[]"
         return json.loads(json_string)
