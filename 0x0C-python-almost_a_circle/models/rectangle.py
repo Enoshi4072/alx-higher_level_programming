@@ -14,7 +14,7 @@ class Rectangle(Base):
 
         Args:
             Width: The rectangles width
-            height: 
+            height:
             The rectangles height
             x: The rectangles x-coordinate
             y: The rectangles y-coordinate
@@ -129,3 +129,39 @@ class Rectangle(Base):
     def area(self):
         """ Returns the area of the rectangle """
         return self.__width * self.__height
+
+    def display(self):
+        """ Display the rectangle using '#' """
+        x_y = ' ' * self.x + '#' * self.width
+        for i in range(self.y):
+            print()
+        for j in range(self.height):
+            print(x_y)
+
+    def __str__(self):
+        return f"[Rectangle] {(self.id)} {self.x}/{self.y} \
+                - {self.__width}/{self.__height}"
+
+    def update(self, *args, **kwargs):
+        """
+        Assign arguments to each attribute in order
+        """
+        if args and len(args) > 0:
+            attr = ['id', 'width', 'height', 'x', 'y']
+            for i, arg in enumerate(args):
+                setattr(self, attr[i], arg)
+        for k, v in kwargs.items():
+            setattr(self, k, v)
+
+    def to_dictionary(self):
+        """
+        Returns a dictionary rep of a rectangle
+
+        """
+        return {
+               'id': self.id,
+               'width': self.width,
+               'height': self.height,
+               'x': self.x,
+               'y': self.y
+        }

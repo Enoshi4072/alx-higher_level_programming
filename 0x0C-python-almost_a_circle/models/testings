@@ -1,0 +1,45 @@
+import unittest
+import os
+import json
+
+from your_module import Base, MyClass  # Import your module and classes
+
+
+class SaveToFileTestCase(unittest.TestCase):
+    def setUp(self):
+        # Create objects
+        self.obj1 = MyClass(name='Object 1')
+        self.obj2 = MyClass(name='Object 2')
+        self.obj3 = MyClass(name='Object 3')
+
+        # Create a temporary file path for testing
+        self.filename = 'test.json'
+
+    def tearDown(self):
+        # Remove the temporary file after each test
+        if os.path.exists(self.filename):
+            os.remove(self.filename)
+
+    def test_save_to_file(self):
+        # Call save_to_file method
+        objects_list = [self.obj1, self.obj2, self.obj3]
+        MyClass.save_to_file(objects_list)
+
+        # Verify the JSON file exists
+        self.assertTrue(os.path.exists(self.filename))
+
+        # Read the JSON file
+        with open(self.filename, 'r') as file:
+            json_data = file.read()
+
+        # Verify the JSON content
+        expected_json = json.dumps([
+            {'id': self.obj1.id, 'name': self.obj1.name},
+            {'id': self.obj2.id, 'name': self.obj2.name},
+            {'id': self.obj3.id, 'name': self.obj3.name}
+        ])
+        self.assertEqual(json_data, expected_json)
+
+
+if __name__ == '__main__':
+    unittest.main()

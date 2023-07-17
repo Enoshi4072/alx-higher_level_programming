@@ -1,0 +1,70 @@
+import unittest
+from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
+import json
+import os
+from unittest import TestCase
+from unittest.mock import patch, mock_open
+
+
+class Base_Test_Cases(unittest.TestCase):
+
+    def setUp(self):
+        """ Reset the counter before the method """
+        Base._Base__nb_objects = 0
+
+    def test_automatic_id_generation(self):
+        """ Test to determine if an id is automattically generated """
+        inst1 = Base()
+        inst2 = Base()
+        self.assertEqual(inst1.id, 1)
+        self.assertEqual(inst2.id, 2)
+
+    def test_when_id_is_provided(self):
+        """ If the id is assigned correctly when it is provided """
+        inst1 = Base(id=15)
+        self.assertEqual(inst1.id, 15)
+
+    def test_when_negative_id(self):
+        """ If a negative id is provided """
+        inst1 = Base(id=-20)
+        self.assertEqual(inst1.id, -20)
+
+    def test_when_id_are_provided_and_auto_gen(self):
+        """ when an id isprovided and when auto gen """
+        inst1 = Base()
+        inst2 = Base(14)
+        inst3 = Base()
+        self.assertEqual(inst1.id, 1)
+        self.assertEqual(inst2.id, 14)
+        self.assertEqual(inst3.id, 2)
+
+    def test_when_none(self):
+        """ When none is ptovided """
+        inst1 = Base(None)
+        inst2 = Base(None)
+        self.assertEqual(inst1.id, 1)
+        self.assertEqual(inst2.id, 2)
+
+    def test_to_json_string(self):
+        """ When a string is given """
+        list_dict = [{'id': 1, 'name': 'inst1'}, {'id': 2, 'name': 'inst2'}]
+        result = json.dumps(list_dict)
+        self.assertEqual(Base.to_json_string(list_dict), result)
+
+    def test_an_empty_list(self):
+        """ When an empty list id provided """
+        list_dict = []
+        result = "[]"
+        self.assertEqual(Base.to_json_string(list_dict), result)
+
+    def test_when_none_is_give(self):
+        """ When None is provided as the input """
+        list_dict = None
+        result = "[]"
+        self.assertEqual(Base.to_json_string(list_dict), result)
+
+
+if __name__ == '__main__':
+    unittest.main()
