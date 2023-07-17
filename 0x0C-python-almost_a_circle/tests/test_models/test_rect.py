@@ -200,7 +200,7 @@ class Rectangle_Test_Cases(unittest.TestCase):
     def test_to_dictionary(self):
         """ Test converting a rectangle object to a dictionary """
         rect = Rectangle(10, 5, 2, 3, 100)
-        expected_dict = {'id': 100, 'width': 10, 'height': 5, 'x': 2, 'y': 3}
+        expected_dict = {'id': 100, 'width': 10, 'heght': 5, 'x': 2, 'y': 3}
         self.assertEqual(rect.to_dictionary(), expected_dict)
 
 

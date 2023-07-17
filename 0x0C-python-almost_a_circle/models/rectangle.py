@@ -158,10 +158,18 @@ class Rectangle(Base):
         Returns a dictionary rep of a rectangle
 
         """
-        return {
-               'id': self.id,
-               'width': self.width,
-               'height': self.height,
-               'x': self.x,
-               'y': self.y
-        }
+        if isinstance(self, Rectangle):
+            return {
+                    'id': self.id,
+                    'width': self.width,
+                    'heght': self.height,
+                    'x': self.x,
+                    'y': self.y
+            }
+        elif isinstance (self, Square):
+            return {
+                    'id': self.id,
+                    'size': self.size,
+                    'x': self.x,
+                    'y': self.y
+            }
