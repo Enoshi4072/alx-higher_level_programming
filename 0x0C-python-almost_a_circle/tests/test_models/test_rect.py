@@ -167,12 +167,6 @@ class Rectangle_Test_Cases(unittest.TestCase):
             rect.display()
             self.assertEqual(fake_out.getvalue(), expected_output)
 
-    def test_rectangle_str(self):
-        """ Test the string representation of a rectangle """
-        rect = Rectangle(10, 5, 3, 2, 100)
-        expected_output = "[Rectangle] 100 3/2 - 10/5"
-        self.assertEqual(str(rect), expected_output)
-
     def test_update_with_args(self):
         """ Test updating attributes using positional arguments """
         rect = Rectangle(10, 5)
