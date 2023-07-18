@@ -6,7 +6,7 @@ import json
 
 class Base:
     """
-    Base class to manage the id attribute and provide 
+    Base class to manage the id attribute and provide
     deserialization and serialization functionality
 
     Private Class attributes:
@@ -15,6 +15,7 @@ class Base:
     """
 
     __nb_objects = 0
+
     def __init__(self, id=None):
         """
         Initializing the base class
