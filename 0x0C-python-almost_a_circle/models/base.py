@@ -5,8 +5,6 @@ import json
 
 
 class Base:
-    __nb_objects = 0
-
     """
     Base class to manage the id attribute and provide 
     deserialization and serialization functionality
@@ -15,6 +13,8 @@ class Base:
         __nb_objects: Number of instantiated Base objects
 
     """
+
+    __nb_objects = 0
     def __init__(self, id=None):
         """
         Initializing the base class
