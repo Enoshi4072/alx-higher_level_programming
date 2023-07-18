@@ -166,7 +166,7 @@ class Rectangle(Base):
                     'x': self.x,
                     'y': self.y
             }
-        elif isinstance (self, Square):
+        elif isinstance(self, Square):
             return {
                     'id': self.id,
                     'size': self.size,
