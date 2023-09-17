@@ -22,5 +22,7 @@ if __name__ == "__main__":
     results = cursor.fetchone()
     if results and results[0]:
         print(results[0])
+    else:
+        print("")
     cursor.close()
     db.close()
