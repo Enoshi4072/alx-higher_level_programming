@@ -1,0 +1,38 @@
+Object relational mapers - Is a code lib that automates the transefer of data stored ina relational database tables into objs that are more commonly used in application code
+Why are ORMs useful?
+- Allows a dev tw rite python code instead of SQL CODE. Devs can use the lang that they are comfortable with instead of writing SQL statements or stored procedures.
+- This enables one to speed up the dev of a web application.
+- It makes it theoreticaaly possible to switch an application btn var databases
+
+Does one have to use ORM for his web dev?
+- Python ORM libs are not required for accessing relational databases.
+- Low level access can be provided by another lib called a database connector such as psycopg or MySQL-python for mysql
+
+Downsides of using an ORM?
+1. Impedance mistmatch
+2. Potential for reduced performance
+3. Shifting cimplexity from the database to the application code
+
+Impedance mismatch
+- Is a catch all term used for the difficulties that occur when moving data btn relational tables and app objs
+- The gist is the means that a dev uses obj is diff from how data is stored and joined in a relational database
+
+Potential for reduced performance
+- Performance hit comed from the translation of application code into a corresponding SQL statement which may not be tuned properly
+
+Shifting complexity from the database into the app code
+- The code working with an app data has to live somewhere.
+- With an ORM, the data manipulation code lives within the apps Python codebase
+- The problem comes where it increases the total amount of python code instead of plitting the code btn the app and the databas stored procedures
+
+Python ORM implementations
+1. Django ORM
+- Comes with its own built in object relational mapping module.
+2. SQL alchemy
+- Gets the abstraction level "just right" and seems to make comple database queries easier to write than the Django ORM in most cases.
+3. Peewee ORM
+- Is a python ORM that is written to be simpler, smaller and more hackable
+4. Pony
+- Is another python ORM available as open source
+5. SQL Object ORM
+
