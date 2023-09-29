@@ -8,7 +8,6 @@ the_url = sys.argv[1]
 try:
     with urllib.request.urlopen(the_url) as response:
         x_request = response.getheader('X-Request-Id')
-        if x_request:
-            print(x_request)
+    print(x_request)
 except Exception as exp:
     print(exp)
