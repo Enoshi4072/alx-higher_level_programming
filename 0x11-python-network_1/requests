@@ -1,0 +1,8 @@
+Python Request Functions
+- get: Sends a GET request to a gvn URL. e.g., get(url, parameters, arguments)
+- post: sends a POST rew to publish spec data to a gvn URL e.g., post(url, data, json, args)
+- put: Send a put request to replace data at a given URL e.g.,PUT request to replace data at a gvn URL
+- patch: Sends a PATCH request to make partial canges to the data of a given URL
+- delete: Sends a DELETE req to delete data from a given URL
+- head: Sends a HEAD req to a gvn URL. Similar to a GET request, but without the body
+- options: Specify communication options for a goven URL
