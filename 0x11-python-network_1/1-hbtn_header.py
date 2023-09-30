@@ -9,6 +9,3 @@ try:
     print(x_request)
 except Exception as exp:
     print(exp)
-
-if __name__ == "__main__":
-    main()
